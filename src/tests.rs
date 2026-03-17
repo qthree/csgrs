@@ -832,6 +832,7 @@ fn test_csg_ray_intersections() {
 }
 
 #[test]
+#[cfg(feature = "sketch")]
 fn test_csg_square() {
     let sq: Sketch<()> = Sketch::square(2.0, None);
     let mesh_2d: Mesh<()> = sq.into();
@@ -846,6 +847,7 @@ fn test_csg_square() {
 }
 
 #[test]
+#[cfg(feature = "sketch")]
 fn test_csg_circle() {
     let circle: Sketch<()> = Sketch::circle(2.0, 32, None);
     let mesh_2d: Mesh<()> = circle.into();

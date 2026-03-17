@@ -21,10 +21,12 @@ use crate::polygon::Polygon;
 use crate::vertex::Vertex;
 
 #[cfg(feature = "sketch")]
-use crate::sketch::Sketch;
+use {
+    crate::sketch::Sketch,
+    geo::{CoordsIter, Geometry, Polygon as GeoPolygon}
+};
 
 use crate::csg::CSG;
-use geo::{CoordsIter, Geometry, Polygon as GeoPolygon};
 use nalgebra::{
     Isometry3, Matrix4, Point3, Quaternion, Unit, Vector3, partial_max, partial_min,
 };
