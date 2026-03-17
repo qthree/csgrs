@@ -429,7 +429,9 @@ where S: Clone + Send + Sync + Debug
                 Event::Tag(tag::Path, Empty, attrs) => {
                     let data = expect_attr!(attrs, "d")?;
                     let data = path::Data::parse(data)?;
+                    dbg!(&data);
                     let mls = svg_path_to_multi_line_string(data)?;
+                    dbg!(&mls);
 
                     // TODO: This is tricky.
                     // Whether a <path/> contains lines or polygons really depends on the current stroke and fill,
@@ -450,8 +452,11 @@ where S: Clone + Send + Sync + Debug
                     for ls in mls.0.into_iter() {
                         if ls.is_closed() {
                             let polygon = Polygon::new(ls, vec![]);
+                            dbg!(&polygon);
                             let sketch = Self::from_geo(polygon.into(), metadata.clone());
+                            dbg!(&sketch);
                             sketch_union = sketch_union.union(&sketch);
+                            dbg!(&sketch_union);
                         }
                     }
                 },

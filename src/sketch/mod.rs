@@ -247,8 +247,11 @@ impl<S: Clone + Send + Sync + Debug> CSG for Sketch<S> {
         let polys2 = &other.to_multipolygon();
 
         // Perform union on those multipolygons
+        dbg!(&polys1, &polys2);
         let unioned = polys1.union(polys2); // This is valid if each is a MultiPolygon
+        dbg!(&unioned);
         let oriented = unioned.orient(Direction::Default);
+        dbg!(&oriented);
 
         // Wrap the unioned multipolygons + lines/points back into one GeometryCollection
         let mut final_gc = GeometryCollection::default();

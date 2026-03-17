@@ -189,3 +189,7 @@ wasm = [
   "serde",
 ]
 spade = ["dep:spade"]
+
+[patch.crates-io]
+geo = { git = "https://github.com/georust/geo.git" }
+geo-types = { git = "https://github.com/georust/geo.git" }
