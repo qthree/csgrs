@@ -178,7 +178,6 @@ let lofted = Sketch::loft(&bottom.polygons[0], &top.polygons[0], false);
 
 - **`Sketch::offset(distance)`** - outward (or inward) offset in 2D using [`geo-offset`](https://crates.io/crates/geo-offset).
 - **`Sketch::offset_rounded(distance)`** - outward (or inward) offset in 2D using [`geo-offset`](https://crates.io/crates/geo-offset).
-- **`Sketch::straight_skeleton(&self, orientation: bool)`** - returns a Sketch containing the inside (orientation: true) or outside (orientation: false) straight skeleton
 - **`Sketch::bounding_box()`** - computes the bounding box of the shape.
 - **`Sketch::invalidate_bounding_box()`** - invalidates the bounding box of the shape, causing it to be recomputed on next access
 - **`Sketch::triangulate()`** - subdivides the Sketch into triangles

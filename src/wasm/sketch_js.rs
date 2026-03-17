@@ -351,13 +351,6 @@ impl SketchJs {
         }
     }
 
-    #[cfg(feature = "offset")]
-    #[wasm_bindgen(js_name=straightSkeleton)]
-    pub fn straight_skeleton(&self, orientation: bool) -> SketchJs {
-        let sketch = self.inner.straight_skeleton(orientation);
-        Self { inner: sketch }
-    }
-
     // Bounding Box
     #[wasm_bindgen(js_name = boundingBox)]
     pub fn bounding_box(&self) -> JsValue {
